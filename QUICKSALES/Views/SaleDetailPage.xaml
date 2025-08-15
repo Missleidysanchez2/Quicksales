@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.SaleDetailPage">
+    <StackLayout Padding="10">
+        <Label Text="Detalles de la Venta" FontSize="Large" HorizontalOptions="Center" />
+
+        <Label Text="Cliente:" FontAttributes="Bold" />
+        <Label x:Name="ClienteLabel" />
+
+        <Label Text="Fecha:" FontAttributes="Bold" />
+        <Label x:Name="FechaLabel" />
+
+        <Label Text="Productos Vendidos:" FontAttributes="Bold" />
+        <ListView x:Name="ProductosListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding CantidadVendida}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Label Text="Total:" FontAttributes="Bold" />
+        <Label x:Name="TotalLabel" />
+
+        <Button Text="Volver" Clicked="OnBackButtonClicked" />
+    </StackLayout>
+</ContentPage>
+

@@ -1,0 +1,13 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.AddClientPage"
+             BackgroundColor="#FFC0CB">
+
+    <StackLayout Padding="20">
+        <Entry x:Name="ClientNameEntry" Placeholder="Nombre del Cliente" />
+        <Entry x:Name="ClientEmailEntry" Placeholder="Email" />
+        <Entry x:Name="ClientPhoneEntry" Placeholder="Teléfono" />
+
+        <Button Text="Agregar Cliente" Clicked="Button_Clicked" BackgroundColor="Black" TextColor="White" Margin="0,10" CornerRadius="10"/>
+    </StackLayout>
+</ContentPage>

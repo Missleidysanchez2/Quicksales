@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.FacturaPage"
+             Title="Factura"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#FFC0CB">
+
+    <Grid Padding="20" RowSpacing="15">
+        <Grid.RowDefinitions>
+            <!-- Definición de filas -->
+            <RowDefinition Height="Auto"/>
+            <!-- Logo -->
+            <RowDefinition Height="Auto"/>
+            <!-- Encabezado -->
+            <RowDefinition Height="Auto"/>
+            <!-- Datos del Cliente -->
+            <RowDefinition Height="Auto"/>
+            <!-- Número de teléfono del Cliente -->
+            <RowDefinition Height="Auto"/>
+            <!-- Sección de producto -->
+            <RowDefinition Height="*"/>
+            <!-- Tabla de productos (expande para llenar el espacio restante) -->
+            <RowDefinition Height="Auto"/>
+            <!-- Total de la factura -->
+            <RowDefinition Height="Auto"/>
+            <!-- IVA -->
+            <RowDefinition Height="Auto"/>
+            <!-- Total -->
+            <RowDefinition Height="Auto"/>
+            <!-- Botones de acción -->
+        </Grid.RowDefinitions>
+        <!-- Logo -->
+        <Image x:Name="logoImage" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" Grid.Row="0"/>
+        <!-- Encabezado -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Grid.Row="1">
+            <Label Text="Factura No: " FontSize="Micro" VerticalOptions="Center" TextColor="#000000" FontAttributes="Bold"/>
+            <Label x:Name="numeroFacturaLabel" FontSize="Micro" VerticalOptions="Center" TextColor="#000000" FontAttributes="Bold"/>
+        </StackLayout>
+        <!-- Datos del Cliente -->
+        <Frame Padding="10" BackgroundColor="#FFFFFF" CornerRadius="10" Grid.Row="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Cliente:" FontSize="Micro" TextColor="#000000" VerticalOptions="Center"/>
+                <Picker x:Name="clientePicker" Grid.Column="1" FontSize="Micro" Title="Seleccione un cliente" SelectedIndexChanged="OnClienteSelected" TextColor="Black">
+                    <Picker.ItemDisplayBinding>
+                        <Binding Path="Nombre" />
+                    </Picker.ItemDisplayBinding>
+                </Picker>
+            </Grid>
+        </Frame>
+        <!-- Número de teléfono del Cliente -->
+        <StackLayout Orientation="Horizontal" Spacing="5" Grid.Row="3">
+            <Label Text="Celular:" VerticalOptions="Center" FontSize="Micro" />
+            <Entry x:Name="telefonoEntry" Placeholder="Número de Teléfono" FontSize="Micro" VerticalOptions="StartAndExpand" Keyboard="Telephone" />
+        </StackLayout>
+        <!-- Sección de producto -->
+        <Frame Padding="10" BackgroundColor="#FFFFFF" CornerRadius="10" Grid.Row="4">
+            <StackLayout>
+                <Label Text="Agregar Producto:" FontSize="Micro" TextColor="#000000"/>
+                <StackLayout Orientation="Horizontal" Spacing="8">
+                    <Picker x:Name="productoPicker" FontSize="Micro" Title="Seleccione" SelectedIndexChanged="OnProductoSelected" TextColor="Black">
+                        <Picker.ItemDisplayBinding>
+                            <Binding Path="NombreP" />
+                        </Picker.ItemDisplayBinding>
+                    </Picker>
+                    <Entry x:Name="precioEntry" Placeholder="Precio" FontSize="Micro" Keyboard="Numeric" WidthRequest="80" TextColor="#000000" IsReadOnly="True"/>
+                    <Entry x:Name="cantidadEntry" Placeholder="Cantidad" FontSize="Micro" Keyboard="Numeric" WidthRequest="80" TextColor="#000000"/>
+                </StackLayout>
+                <Button x:Name="agregarProductoButton" Text="Agregar" Clicked="AgregarProducto_Clicked" BackgroundColor="Black" TextColor="White" CornerRadius="5" HeightRequest="40" Margin="0,4,0,0"/>
+            </StackLayout>
+        </Frame>
+        <!-- Tabla de productos -->
+        <Frame Padding="5" BackgroundColor="#FFFFFF" CornerRadius="5" Grid.Row="5">
+            <ListView x:Name="productosListView" VerticalOptions="FillAndExpand" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5" BackgroundColor="#F5F5F5">
+                                <Label Text="{Binding NombreP}" FontSize="Micro" HorizontalOptions="StartAndExpand" TextColor="#000000"/>
+                                <Label Text="{Binding Precio, StringFormat='C$ {0:N2} '}" FontSize="Micro" HorizontalOptions="StartAndExpand" TextColor="#000000"/>
+                                <Label Text="{Binding Stock, StringFormat='{0}'}" FontSize="Micro" HorizontalOptions="StartAndExpand" TextColor="#000000"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,5,0,0">
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+
+
+        <!-- Total de la factura -->
+        <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand" Grid.Row="6">
+            <Label Text="Subtotal:" FontSize="Micro" VerticalTextAlignment="Center" TextColor="#000000"/>
+            <Label x:Name="subtotalLabel" Text="C$0.00" FontSize="Micro" FontAttributes="Bold" TextColor="#000000" VerticalTextAlignment="Center" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand" Grid.Row="7">
+            <Label Text="IVA (15%):" FontSize="Micro" VerticalTextAlignment="Center" TextColor="#000000"/>
+            <Label x:Name="ivaLabel" Text="C$0.00" FontSize="Micro" FontAttributes="Bold" TextColor="#000000" VerticalTextAlignment="Center" />
+        </StackLayout>
+
+        <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="EndAndExpand" Grid.Row="8">
+            <Label Text="Total:" FontSize="Micro" VerticalTextAlignment="Center" TextColor="#000000"/>
+            <Label x:Name="totalLabel" Text="C$0.00" FontSize="Micro" FontAttributes="Bold" TextColor="#000000" VerticalTextAlignment="Center" />
+        </StackLayout>
+
+        <!-- Botones de acción -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="20" Grid.Row="9">
+            <Button Text="Imprimir" Clicked="Imprimir_Clicked" BackgroundColor="Black" TextColor="White" CornerRadius="5" WidthRequest="120" />
+            <Button Text="Enviar por WhatsApp" Clicked="EnviarWhatsApp_Clicked" BackgroundColor="Black" TextColor="White" CornerRadius="5" WidthRequest="180" />
+        </StackLayout>
+    </Grid>
+</ContentPage>

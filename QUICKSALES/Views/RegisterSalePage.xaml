@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.RegisterSalePage">
+
+    <StackLayout>
+        <Picker x:Name="ClientPicker" Title="Seleccione un cliente" ItemDisplayBinding="{Binding Nombre}" />
+        <Picker x:Name="ProductPicker" Title="Seleccionar Producto" ItemDisplayBinding="{Binding NombreP}" />
+        <Picker x:Name="ColorPicker" Title="Seleccione un color" />
+        <Picker x:Name="SizePicker" Title="Seleccione una talla" />
+        <Entry x:Name="QuantityEntry" Placeholder="Cantidad" Keyboard="Numeric" />
+        <Button Text="Registrar Venta" Clicked="Button_Clicked1" />
+    </StackLayout>
+</ContentPage>

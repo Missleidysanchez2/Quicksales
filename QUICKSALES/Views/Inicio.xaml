@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.Inicio"
+             Title="Inicio">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width=".5*"/>
+            <ColumnDefinition Width=".5*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text=" Inicio" FontSize="20" Grid.Row="0"/>
+        <Label Text=" Inicio" FontSize="20" Grid.Row="1"/>
+        <Label Text=" Inicio" FontSize="20" Grid.Row="2"/>
+        <Label Text=" Inicio" FontSize="20" Grid.Row="3"/>
+        <ImageButton Source=""/>
+    </Grid>
+</ContentPage>

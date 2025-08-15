@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.AddProductPage"
+             BackgroundColor="#F8D7DA"
+             NavigationPage.HasNavigationBar="False">
+
+    <ContentPage.Content>
+        <ScrollView BindingContext="{Binding AddProducT}">
+            <StackLayout Padding="20">
+            <Entry x:Name="NameEntry" Placeholder="Nombre" />
+            <Entry x:Name="SizeEntry" Placeholder="Talla" />
+            <Entry x:Name="ColorEntry" Placeholder="Color" />
+            <Entry x:Name="PriceEntry" Placeholder="Precio" Keyboard="Numeric" />
+            <Entry x:Name="StockEntry" Placeholder="Stock" Keyboard="Numeric" />
+         <Button Text="Agregar Producto" Clicked="Button_Clicked" />
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

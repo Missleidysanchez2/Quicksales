@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.RegisterPage">
+
+    <StackLayout Padding="10">
+        <Entry x:Name="usernameEntry" Placeholder="Username" />
+        <Entry x:Name="emailEntry" Placeholder="Email" Keyboard="Email" />
+        <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" />
+        <Entry x:Name="confirmPasswordEntry" Placeholder="Confirm Password" IsPassword="True" />
+        <Entry x:Name="phoneEntry" Placeholder="Phone" Keyboard="Telephone" />
+        <Button Text="Register" Clicked="OnRegisterButtonClicked" />
+    </StackLayout>
+</ContentPage>

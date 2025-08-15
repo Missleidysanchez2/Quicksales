@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.EditProductPage"
+             BackgroundColor="#F8D7DA"
+NavigationPage.HasNavigationBar="True"
+NavigationPage.IconColor="Black">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Editar Producto" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" />
+            <Entry x:Name="NombreEntry" Placeholder="Nombre" Text="{Binding Nombre}" />
+            <Entry x:Name="TallaEntry" Placeholder="Talla" Text="{Binding Talla}" />
+            <Entry x:Name="ColorEntry" Placeholder="Color" Text="{Binding Color}" />
+            <Entry x:Name="PrecioEntry" Placeholder="Precio" Text="{Binding Precio}" Keyboard="Numeric" />
+            <Entry x:Name="StockEntry" Placeholder="Stock" Text="{Binding Stock}" Keyboard="Numeric" />
+            <Button Text="Guardar" Clicked="OnSaveButtonClicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

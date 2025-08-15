@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.UserProfilePage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Perfil de Usuario" FontSize="Large" HorizontalOptions="Center" />
+            <Entry Placeholder="Nombre" x:Name="NameEntry" />
+            <Entry Placeholder="Correo Electrónico" x:Name="EmailEntry" />
+            <!-- Agrega más campos de entrada para otros detalles del perfil de usuario si es necesario -->
+            <Button Text="Guardar Cambios" Clicked="SaveChangesButton_Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

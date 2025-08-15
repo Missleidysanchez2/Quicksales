@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.Nav"
+             Title="Nav"
+             BackgroundColor="#FFC0CB"
+             NavigationPage.HasNavigationBar="True">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <BoxView HeightRequest="50" BackgroundColor="#F8D7DA"/>
+
+
+            <Frame CornerRadius="10" BackgroundColor="#000000" Margin="30,15,30,15">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Image Source="https://i.ibb.co/wzX48H9/caja-registradora.png" WidthRequest="40" HeightRequest="40" VerticalOptions="Center" BackgroundColor="White"/>
+                    <Label Text="Registrar Venta" TextColor="White" VerticalOptions="Center" Margin="10,0,0,0"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnRegisterSaleButtonClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!--  
+            <Button Text="Agregar Producto" Clicked="OnAddProductButtonClicked" BackgroundColor="#000000" TextColor="White" Margin="30,10,30,0" CornerRadius="10"/>
+             -->
+            <Frame CornerRadius="10" BackgroundColor="#000000" Margin="30,15,30,15">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Image Source="https://i.ibb.co/dG8jqQp/agregar-producto.png" 
+                       WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                    <Label Text="Agregar Producto" TextColor="White" VerticalOptions="Center" Margin="10,0,0,0"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnAddProductButtonClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+            <!--<Button Text="Registrar Cliente" Clicked="OnClientesButtonClicked" BackgroundColor="#000000" TextColor="White" Margin="30,10,30,0" CornerRadius="10"/>--> 
+            
+             <Frame CornerRadius="10" BackgroundColor="#000000" Margin="30,15,30,15">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Image Source="https://i.ibb.co/6R0d6Wd/agregar-usuario.png" 
+                       WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                <Label Text="Registrar Cliente" TextColor="White" VerticalOptions="Center" Margin="10,0,0,0"/>
+            </StackLayout>
+            <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnClientesButtonClicked"/>
+            </Frame.GestureRecognizers>
+        </Frame>
+
+            <!-- <Button Text="Ver Clientes" Clicked="OnViewClientsButtonClicked" BackgroundColor="#000000" TextColor="White" Margin="30,10,30,0"  CornerRadius="10"/> -->
+            <Frame CornerRadius="10" BackgroundColor="#000000" Margin="30,15,30,15">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+                    <Image Source="https://i.ibb.co/G2NCv9s/comentarios-de-los-clientes.png" 
+                       WidthRequest="40" HeightRequest="40" VerticalOptions="Center"/>
+                    <Label Text="Ver Clientes" TextColor="White" VerticalOptions="Center" Margin="10,0,0,0"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnViewClientsButtonClicked"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

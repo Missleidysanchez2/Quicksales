@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QUICKSALES.Views.ProductDetailPage">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label Text="Detalles del Producto" FontSize="Large" HorizontalOptions="Center" />
+            <Label Text="Nombre:" />
+            <Label x:Name="ProductNameLabel" />
+            <Label Text="Precio:" />
+            <Label x:Name="ProductPriceLabel" />
+            <!-- Agrega más etiquetas para otros detalles del producto si es necesario -->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
